@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CSS Cheatsheet</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>CSS cheatsheet</h1>
+    </header>
+    <main>
+        <div class="card">
+            <h2>Pseudo Classes</h2>
+            <p>
+                Pseudoclasses like :hover will apply styling when an element has a mouse scrolled over it. Typically
+                requires 2 CSS selectors, one with mouse hover and the other without.
+            </p>
+            <figure>
+                <code>
+h1, h2, h3 {
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(255, 0, 255);
+    transition: all 300ms ease-in-out;
+}
+
+/* Adding :hover pseudo classes on headin elements */
+h1:hover, .card:hover h2, h3:hover {
+    color: cyan;
+    text-shadow: 1px 1px 8px rgb(255, 0, 255);
+}
+
+.card {
+    margin: 25px 10px;
+    border: 2px dashed white;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 3px 8px cyan;
+    transition: all 300ms ease-in-out;
+}
+
+.card:hover {
+    background-color: rgb(45, 45, 46);;
+    border: 2px solid white;
+    box-shadow: 0px 8px 30px rgb(255, 0, 255);
+}
+                </code>
+            </figure>
+        </div>
+        <div class="card">
+            <h2 id="p-elements">Pseudo Elements</h2>
+            <p>Two of the most common pseudo elements are ::before and ::after. Using them places a 'fake' element before or after the targetted element, can be combined with pseudo classes for fun effects.</p>
+            <figure>
+                <code>
+.card:hover #p-elements::before {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.card:hover #p-elements::after {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+}
+                </code>
+            </figure>
+        </div>
+        <div class="card">
+            <h2>Transition</h2>
+            <p>The transition shorthand CSS syntax is written as follows:</p>
+            <figure>
+                <code>
+/* Apply to 1 property */
+/* property name | duration */
+transition: margin-right 4s;
+
+/* property name | duration | delay */
+transition: margin-right 4s 1s;
+
+/* property name | duration | easing function */
+transition: margin-right 4s ease-in-out;
+
+/* property name | duration | easing function | delay */
+transition: margin-right 4s ease-in-out 1s;
+
+/* Apply to 2 properties */
+transition: margin-right 4s, color 1s;
+
+/* Apply to all changed properties */
+transition: all 0.5s ease-out;
+
+/* Global values */
+transition: inherit;
+transition: initial;
+transition: revert;
+transition: revert-layer;
+transition: unset;
+
+                </code>
+            </figure>
+        </div>
+        <div class="card">
+            <h2>Position</h2>
+            <p>Static is the default, Relative is relative where the element would be if it were static, absolute removes the element from the document flow, and positions it relative to where it would be</p>
+            <figure>
+                <code>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ducimus asperiores quisquam sapiente sunt
+                </code>
+            </figure>
+        </div>
+        <div class="card">
+            <h2>Text/Box-shadow</h2>
+            <p>Use text-shadow and box-shadow properties to add shadows to elements, combining with pseudo classes makes fun and interesting effects</p>
+            <figure>
+                <code>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ducimus asperiores quisquam sapiente sunt
+                </code>
+            </figure>
+        </div>
+        <div class="card">
+            <h2>Border-radius</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores aliquid in id cumque.</p>
+            <figure>
+                <code>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ducimus asperiores quisquam sapiente sunt
+                </code>
+            </figure>
+        </div>
+    </main>
+    <footer>
+        <h3>
+            Made with ducks and CSS
+        </h3>
+        <!-- The following SVG was generated using the shapedivider.app curve creation tool -->
+        <div class="curves">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </footer>
+</body>
